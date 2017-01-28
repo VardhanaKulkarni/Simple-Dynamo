@@ -100,120 +100,7 @@ public class SimpleDynamoProvider extends ContentProvider {
 			}
 
 
-			/*
-			String Path = context.getFilesDir().getAbsolutePath();
-			if (selection.equals("@") == false)
-			selection = "*";
-			//if(deleteTag == 0) {
-
-				if (selection.equals("@")) {
-                    //deleteTag =1;
-					File file1 = new File(Path);
-					File[] fileNames = file1.listFiles();
-					Log.e("Filessssssss", Integer.toString(fileNames.length));
-
-					for (int i = 0; i < fileNames.length; i++) {
-						Log.e("from files directory", fileNames[i].getName());
-						String FileN = fileNames[i].getName();
-
-						File filex = new File(Path, FileN);
-						filex.delete();
-					}
-				} else if (selection.equals("*")) {
-					//deleteTag =1;
-				/*if(prev_node!=null && succ_node != null) {
-					Socket sockett = new Socket();
-					sockett.connect(new InetSocketAddress(InetAddress.getByAddress(new byte[]{10, 0, 2, 2}),
-							Integer.parseInt(succ_node)));
-					PrintWriter out = new PrintWriter(sockett.getOutputStream());
-					BufferedReader in = new BufferedReader(new InputStreamReader(sockett.getInputStream()));
-					String msgstar = "DELETESTAR" + "%" + MYPort;
-					Log.e("VSK","Sending to next node");
-					out.println(msgstar);
-					out.flush();
-					String Final = in.readLine();
-					String localMsgs = deleteAllMsgs();
-					Log.e("VSK","Got the final reply  "+ Final);
-					// cursor = constructCursor(localMsgs + Final);
-				}else{
-					File file1 = new File(Path);
-					File[] fileNames = file1.listFiles();
-					Log.e("Filessssssss", Integer.toString(fileNames.length));
-
-					for (int i = 0; i < fileNames.length; i++) {
-						Log.e("from files directory", fileNames[i].getName());
-						String FileN = fileNames[i].getName();
-
-						File filex = new File(Path, FileN);
-						Log.e("VVVVVVVVVV", "yayy found locally");
-						BufferedReader readFile = new BufferedReader(new FileReader(filex));
-						String value = readFile.readLine();
-						readFile.close();
-					}
-				}*/
-				/*	for (int i = 0; i < 5; i++) {
-						Socket socketd = new Socket(InetAddress.getByAddress(new byte[]{10, 0, 2, 2}),
-								Integer.parseInt(REMOTE_PORT[i]));
-						PrintWriter outd = new PrintWriter(socketd.getOutputStream());
-						BufferedReader ind = new BufferedReader(new InputStreamReader(socketd.getInputStream()));
-						outd.println("DELETEALL%");
-						outd.flush();
-						//Log.e("deleteall", "waiting for the reply");
-						//output[i] = ind.readLine();
-						//if(output[i] == null){
-						//	outd.close();
-						//	socketd.close();
-						//	continue;
-						//}
-						//Log.e("Starall reply "+ i,output[i]);
-						outd.close();
-						socketd.close();
-					}
-
-
-				} else {
-					if (prev_node != null && succ_node != null) {
-						String hashSelection = genHash(selection);
-						String hashOwnnode = genHash(Integer.toString(Integer.parseInt(MYPort) / 2));
-						String hashPrevnode = genHash(Integer.toString(Integer.parseInt(prev_node) / 2));
-
-
-						if ((MYPort.equals((initNode)) && ((hashSelection.compareTo(hashOwnnode) <= 0) || (hashSelection.compareTo(hashPrevnode) > 0))) ||
-								(!MYPort.equals((initNode)) && ((hashSelection.compareTo(hashOwnnode) <= 0) && (hashSelection.compareTo(hashPrevnode) > 0)))) {
-
-						/*File file = new File(Path, selection);
-						file.delete();
-
-							File file1 = new File(Path);
-							File[] fileNames = file1.listFiles();
-							Log.e("Filessssssss", Integer.toString(fileNames.length));
-
-							for (int i = 0; i < fileNames.length; i++) {
-								Log.e("from files directory", fileNames[i].getName());
-								String FileN = fileNames[i].getName();
-
-								File filex = new File(Path, FileN);
-								filex.delete();
-							}
-						} else {
-							Socket socket = new Socket();
-							socket.connect(new InetSocketAddress(InetAddress.getByAddress(new byte[]{10, 0, 2, 2}),
-									Integer.parseInt(succ_node)));
-							PrintWriter out = new PrintWriter(socket.getOutputStream());
-							BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-							out.println("DELETE" + "%" + selection + "%" + MYPort);
-							Log.e("VVVVV", "Sending to next node");
-							out.flush();
-							Log.e("Query", "waiting to get " + selection);
-							String Rmsg = in.readLine();
-						}
-					} else {
-						File file = new File(Path, selection);
-						file.delete();
-					}
-				}
-			//}
-		*/
+			
 		}catch(Exception e){
 			Log.e(TAG,"EXCeption");
 		}
@@ -351,7 +238,6 @@ public class SimpleDynamoProvider extends ContentProvider {
 					out.close();
 				}
 			}
-			Log.e("SIMPLE", "-------------------------------------");
 
 		}catch (NoSuchAlgorithmException e){
 			Log.e(TAG,"Expection Generated");
